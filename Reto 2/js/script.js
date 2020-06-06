@@ -176,7 +176,6 @@ function P19(num, rep) {
 }
 
 String.prototype.vreplace = P20;
-
 function P20() {
   return this.replace(/[aeiou]/g, "u").replace(/[AEIOU]/g, "U");
 }
@@ -190,14 +189,14 @@ function P21(str) {
   }
 }
 
-function P22(str) {
-  str = str.split(/[ ]/g);
+function P22(stri) {
+  let str = stri.split(/[ ]/g);
   let reg = /[aeiou]([^aeiou]*?)(?= |$)/;
-  console.log(str);
+  let aux = 0
   for (let i = 0; i < str.length; i++) {
-    console.log(str[i][str[i].search(reg)]);
-    str[i][str[i].search(reg)]="X";
+      aux = str[i].search(reg);
+      str[i]=str[i].substr(0,aux) + str[i][aux].toUpperCase() + str[i].substr(aux+1)
   }
-  console.log(str);
-  return 0;
+  str = str.join(" ")
+  return str;
 }
