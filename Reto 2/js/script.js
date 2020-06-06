@@ -181,7 +181,7 @@ function P20() {
   return this.replace(/[aeiou]/g, "u").replace(/[AEIOU]/g, "U");
 }
 
-function P22(str) {
+function P21(str) {
   let aux = str.replace(/[,./]/g, "").split(/[ ]/);
   for (let i = 0; i < aux.length; i++) {
     if (aux[i] == "nemo") {
@@ -190,7 +190,7 @@ function P22(str) {
   }
 }
 
-function P23(str) {
+function P22(str) {
   str = str.split(/[ ]/g);
   let reg = /[aeiou]([^aeiou]*?)(?= |$)/;
   console.log(str);
